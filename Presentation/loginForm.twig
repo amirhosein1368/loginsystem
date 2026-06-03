@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aanmelden</title>
+    <link rel="stylesheet" href="Resources/style.css">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <h1>Aanmelden</h1>
+
+        
+
+        {% if errors is not empty %}
+
+            <div class="error-box">
+                <?php //if (isset($errors["email_empty"])) : ?>
+                {% if errors.email_empty is defined %}
+                
+                    <p>Email is verplicht.</p>
+                {% endif %}
+                <?php //if (isset($errors["password_empty"])) : ?>
+                {% if errors.password_empty is defined %}
+                    <p>Password is verplicht.</p>
+                {% endif %}
+
+                <?php// if (isset($errors["login_failed"])) : ?>
+                {% if errors.login_failed is defined %}
+                    <p>Foute gebruikersnaam of wachtwoord.</p>
+                {% endif %}
+                <?php //if (isset($errors["passwordIncorrect"])) : ?>
+                {% if errors.passwordIncorrect is defined %}
+                
+                    <p>Foute wachtwoord.</p>
+                {% endif %}
+
+            </div>
+
+        {% endif %}
+
+        <form method="post" action="aanmelden.php?action=aanmelden" novalidate>
+
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    placeholder="Email" 
+                    name="email"
+                    value="{{ email|default('') }}"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <input 
+                    type="password" 
+                    placeholder="Password" 
+                    name="password"
+                    value="{{ password|default('') }}"
+                    required
+                >
+            </div>
+
+            <input 
+                type="submit" 
+                value="Aanmelden"
+                class="submit-btn"
+            >
+
+        </form>
+        <div class="bottom-text">
+            Password Vergeten?
+            <a href="passwordReset.php">Reset Wachtwoord</a>
+        </div>
+        <div class="bottom-text">
+            Nog geen account?
+            <a href="registreren.php">Registreer hier</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

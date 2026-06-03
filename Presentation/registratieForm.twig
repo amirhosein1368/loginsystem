@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registreren</title>
+
+    <link rel="stylesheet" href="Resources/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Account Registreren</h1>
+
+        {% if errors is defined %}
+            <div class="error-box">
+
+                {% if errors.naam_empty is defined %}
+                    <p>Voornaam is verplicht.</p>
+                {% endif %}
+
+                {% if errors.familienaam_empty is defined %}
+                    <p>Familienaam is verplicht.</p>
+                {% endif %}
+
+                {% if errors.email_empty is defined %}
+                    <p>Gebruikersnaam is verplicht.</p>
+                {% endif %}
+
+                {% if errors.password_empty is defined %}
+                    <p>Wachtwoord is verplicht.</p>
+                {% endif %}
+
+                {% if errors.confirmPassword_empty is defined %}
+                    <p>Bevestig wachtwoord is verplicht.</p>
+                {% endif %}
+
+                {% if errors.passwords_notMatch is defined %}
+                    <p>Wachtwoorden komen niet overeen.</p>
+                {% endif %}
+
+                {% if errors.emailBestaat is defined %}
+                    <p>Gebruikersnaam bestaat al.</p>
+                {% endif %}
+
+            </div>
+        {% endif %}
+
+        <form method="post" action="registreren.php?action=registreren" novalidate>
+
+            <div class="input-group">
+                <input 
+                    type="text"
+                    name="naam"
+                    placeholder="Voornaam"
+                    value="{{ values.naam|default('') }}"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <input 
+                    type="text"
+                    name="familienaam"
+                    placeholder="Familienaam"
+                    value="{{ values.familienaam|default('') }}"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <input 
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    value="{{ values.email|default('') }}"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <input 
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    value="{{ values.password|default('') }}"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <input 
+                    type="password"
+                    name="confirmPassword"
+                    placeholder="Bevestig Password"
+                    value="{{ values.confirmPassword|default('') }}"
+                    required
+                >
+            </div>
+
+            <input 
+                type="submit"
+                value="Registreren"
+                class="btn"
+            >
+
+        </form>
+        <div class='bottom-text'>
+             Heb je al een account?
+            <a href="aanmelden.php" class="link">
+                Aanmelden
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg, #1e3c72, #2a5298);
+    padding:20px;
+}
+
+.container,
+.login-container{
+    width:100%;
+    max-width:450px;
+    padding:40px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.container h1,
+.login-container h1{
+    text-align:center;
+    margin-bottom:30px;
+    color:#1e3c72;
+    font-size:32px;
+    line-height:1.4;
+}
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.input-group input:focus{
+    border-color:#2a5298;
+    outline:none;
+    box-shadow:0 0 10px rgba(42,82,152,0.3);
+}
+
+.btn,
+.submit-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#1e3c72;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+    text-decoration:none;
+    display:inline-block;
+    text-align:center;
+}
+
+.btn:hover,
+.submit-btn:hover{
+    background:#16325c;
+    transform:translateY(-2px);
+}
+
+.bottom-text{
+    margin-top:20px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+.bottom-text a,
+.link{
+    color:#1e3c72;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.bottom-text a:hover,
+.link:hover{
+    text-decoration:underline;
+}
+
+.error-box{
+    background:#ffe5e5;
+    border:1px solid #ff4d4d;
+    color:#cc0000;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.error-box p{
+    margin-bottom:10px;
+}
+
+.error-box p:last-child{
+    margin-bottom:0;
+}
+
+.success-box{
+    background:#e5ffe5;
+    border:1px solid #33cc33;
+    color:#248f24;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.success-box p{
+    margin:0;
+}
